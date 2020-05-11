@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>记住用户名</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <input type="text" id="username"> <input type="checkbox" name="" id="remember"> 记住用户名
+  <script>
+    let username = document.querySelector('#username')
+    let remember = document.querySelector('#remember')
+    // 判断localStorage中是否存在数据
+    if (localStorage.getItem('username')) {
+      username.value = localStorage.getItem('username')
+      remember.checked = true
+    }
+    // 复选框改变事件，如果改变则判断当前状态，如果选中就设置localStorage的值，如果没有选择则删除localStorage中的值
+    remember.addEventListener('change', function () {
+      if (this.checked) {
+        localStorage.setItem('username', username.value)
+      } else {
+        localStorage.removeItem('username')
+      }
+    })
+  </script>
+</body>
+</html>
