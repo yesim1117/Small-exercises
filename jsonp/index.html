@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">点击发送请求</button>
+  <script src="jsonp.js"></script>
+  <script>
+    function fn (data) {
+      console.log(data);
+    }
+  </script>
+  <script>
+    let btn = document.getElementById('btn')
+    btn.addEventListener('click', function () {
+      jsonp({
+        url: 'http://loaclhost:3000/xxxx?callback=fn',
+        success () {
+
+        }
+      })
+    })
+  </script>
+</body>
+</html>
