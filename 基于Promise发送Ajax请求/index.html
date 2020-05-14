@@ -1,0 +1,59 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /**
+    * 基于Promise发送Ajax请求
+    **/
+    // function queryData (url) {
+    //   return new Promise((resovle, reject) => {
+    //     let xhr = new XMLHttpRequest()
+    //     xhr.onreadystatechange = () => {
+    //       if (xhr.readyState != 4) return
+    //       if (xhr.readyState == 4 && xhr.status == 200) {
+    //         resovle(xhr.responseText)
+    //       }else {
+    //         reject('出错')
+    //       }
+    //     }
+    //     xhr.open('get', url)
+    //     xhr.send(null)
+    //   })
+    // }
+    // queryData('http://localhost:3000/data')
+    // .then(data => {
+    //   console.log(data);
+    // }).catch((e) => {
+    //   console.log(e);
+    // })
+
+    // queryData('http://localhost:3000/data')
+    //   .then((data) => {
+    //     console.log(data)
+    //     return queryData('http://localhost:3000/data1')
+    //   })
+    //   .then((data) => {
+
+    //   })
+
+    function queryData () {
+      return new Promise((resovle, reject) => {
+        setTimeout(() => {
+          resovle('1')
+        }, 1000)
+      })
+    }
+
+    queryData()
+    console.log(queryData());
+    // .then(function (data) {
+    //    console.log(data);
+    //   return queryData()
+    // })
+  </script>
+</body>
+</html>
