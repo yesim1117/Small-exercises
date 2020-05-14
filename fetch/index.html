@@ -1,0 +1,30 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let url = 'http://120.xxx.xx.xxx:xxxx/xxx/xxxxxxx/xx/xxxx'
+    fetch(url).then(function (data) {
+      // text() 方法属于fetchAPI的一部分，它返回一个Promise 实例对象，用于获取后台返回的数据
+      return data.text()
+    }).then(function (data) {
+      // 这里得到的才是最终的数据
+      console.log(data)
+    }).catch(function (err) {
+      console.log(err);
+    })
+
+    fetch(url)
+      // text() 方法属于fetchAPI的一部分，它返回一个Promise 实例对象，用于获取后台返回的数据
+      .then(data => data.text())
+      .then(data => {
+        // 这里得到的才是最终的数据
+        console.log(data)
+      })
+      .catch(err => console.log(err))
+  </script>
+</body>
+</html>
