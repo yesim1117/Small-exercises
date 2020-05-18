@@ -1,0 +1,80 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: #678;
+    }
+    #cb_area {
+      width: 200px;
+      height: 200px;
+      margin: 100px auto;
+      padding: 25px;
+      box-sizing: border-box;
+    }
+    .check-box {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+    .check-box label {
+      display: block;
+      width: 150px;
+      height: 150px;
+      border: 10px solid #000;
+      box-sizing: border-box;
+      border-radius: 10px;
+      transition: all .2s linear
+    }
+    .check-box label::before,
+    .check-box label::after {
+      position: absolute;
+      content: "";
+      display: block;
+      width: 25px;
+      height: 0;
+      border-radius: 5px;
+      transform-origin: left top;
+      background-color: #36ab19;
+    }
+    .check-box label::before {
+      left: 62px;
+      top: 121px;
+      transform: rotate(-135deg);
+      box-shadow: 0 0 0 5px #678;
+    }
+    .check-box label::after {
+      left: 12px;
+      top: 86px;
+      transform: rotate(-45deg);
+    }
+    .check-box input[type="checkbox"]:checked + label {
+      border-color: #36ab19;
+    }
+    .check-box input[type="checkbox"]:checked + label::after {
+      height: 60px;
+      transition: height .2s linear;
+    }
+    .check-box input[type="checkbox"]:checked + label::before {
+      height: 150px;
+      transition: height .2s linear .2s;
+    }
+    .check-box input[type="checkbox"] {
+      position: absolute;
+      top: 0;
+      left: 0;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+  <div id="cb_area">
+    <div class="check-box">
+      <input type="checkbox" id="checkBox">
+      <label for="checkBox"></label>
+    </div>
+  </div>
+</body>
+</html>
